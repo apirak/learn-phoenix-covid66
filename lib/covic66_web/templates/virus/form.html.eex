@@ -1,0 +1,14 @@
+<H1>New Virus</H1>
+
+<%= form_for @virus, Routes.virus_path(@conn, :create), fn f -> %>
+    <div>
+        <%= text_input f, :code, placeholder: "Code" %>
+    </div>
+    <div>
+        <%= text_input f, :name, placeholder: "Name" %>
+    </div>    
+    <div>
+        <%= text_input f, :description, placeholder: "Description" %>
+    </div>    
+    <%= submit "Create virus" %>
+<% end %>

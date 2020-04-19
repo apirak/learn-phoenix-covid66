@@ -1,0 +1,19 @@
+<h1>Virus List</h1>
+<a href="<%= Routes.virus_path(@conn, :new) %>">[ New ]</a>
+<br/><br/>
+<ul>
+<%= for virus <- @viruses do %>
+  <li>
+    <%= link "[delete]", to: Routes.virus_path(@conn, :delete, virus.code), method: :delete %>
+    <%= link "[edit]", to: Routes.virus_path(@conn, :edit, virus.code) %>
+    <!-- 
+    <a href="<%= Routes.virus_path(@conn, :delete, virus.code) %>" data-method="delete">[delete]</a>
+    <a href="<%= Routes.virus_path(@conn, :edit, virus.code) %>">[edit]</a>
+    -->
+    <a href="<%= Routes.virus_path(@conn, :show, virus.code) %>">
+      <b><%= virus.name %> (<%= virus.code %>)</b>
+    </a>
+    <i><%= virus.description %></i>
+  </li>
+<% end %>
+</ul>

@@ -1,0 +1,3 @@
+<H1>Show virus</H1>
+<B><%= @virus.code %>:<%= @virus.name %></B>
+<p><%= @virus.description %>
